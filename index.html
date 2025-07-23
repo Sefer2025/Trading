@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Confidence Trading Web App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Confidence Trading Web App</h1>
+
+    <form id="tradeForm">
+      <label>ทุน (Balance):</label>
+      <input type="number" id="balance" required>
+
+      <label>เปอร์เซ็นต์เสี่ยง (%Risk):</label>
+      <input type="number" id="riskPercent" required>
+
+      <label>ระยะ Stop Loss (จุด):</label>
+      <input type="number" id="stopLossPoints" required>
+
+      <label>ราคาที่เข้าเทรด (Entry Price):</label>
+      <input type="number" id="entryPrice" required>
+
+      <label>Take Profit Price (TP):</label>
+      <input type="number" id="takeProfitPrice" required>
+
+      <label>Stop Loss Price (SL):</label>
+      <input type="number" id="stopLossPrice" required>
+
+      <label>Confidence Level (1-10):</label>
+      <input type="range" id="confidenceLevel" min="1" max="10">
+
+      <label>Checklist ก่อนเทรด:</label>
+      <div class="checklist">
+        <label><input type="checkbox" id="check1"> เทรดตาม Timeframe ที่วางแผนไว้</label><br>
+        <label><input type="checkbox" id="check2"> มีโครงสร้างตลาดยืนยัน</label><br>
+        <label><input type="checkbox" id="check3"> ไม่มีข่าวสำคัญกำลังออก</label><br>
+        <label><input type="checkbox" id="check4"> วางแผน SL/TP ชัดเจน</label><br>
+        <label><input type="checkbox" id="check5"> ยืนยันสัญญาณเทรด 2 อย่างขึ้นไป</label><br>
+      </div>
+
+      <button type="submit">บันทึกข้อมูลการเทรด</button>
+    </form>
+
+    <div id="result"></div>
+
+    <h2>ประวัติการบันทึก</h2>
+    <ul id="logList"></ul>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
